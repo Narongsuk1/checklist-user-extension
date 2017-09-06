@@ -1,0 +1,25 @@
+<odoo>
+<data>
+    <report
+        id="user_report"
+        model="checklist.checklist"
+        string="Checklist User Report"
+        name="checklist_user.user_report"
+        file="checklist_user.checklist_user_report"
+        report_type="qweb-pdf" />
+
+    <template id="user_report">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <h2 t-field="doc.name"/>
+                        <p>From <span t-field="doc.create_date"/> </p>
+                        <h3>Attendees:</h3>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</data>
+</odoo>

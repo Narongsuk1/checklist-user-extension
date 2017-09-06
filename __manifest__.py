@@ -21,11 +21,13 @@
     # any module necessary for this one to work correctly
     'depends': [
             'base',
-            'checklist'
+            'checklist',
+            'report'
     ],
 
     # always loaded
     'data': [
         'views/views.xml',
+        'report/checklist_user_report.xml'
     ],
 }
