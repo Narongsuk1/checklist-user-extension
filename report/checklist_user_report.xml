@@ -13,9 +13,23 @@
             <t t-foreach="docs" t-as="doc">
                 <t t-call="report.external_layout">
                     <div class="page">
-                        <h2 t-field="doc.name"/>
-                        <p>From <span t-field="doc.create_date"/> </p>
-                        <h3>Attendees:</h3>
+                        <div class="col-xs-3">Date</div>
+                        <div class="col-xs-9"><span t-field="doc.create_date"/></div>
+
+                        <div class="col-xs-3">Subject</div>
+                        <div class="col-xs-9"><span t-field="doc.name"/></div>
+
+                        <div class="col-xs-3">Description</div>
+                        <div class="col-xs-9"><span t-field="doc.description"/></div>
+
+                        <div class="col-xs-3">Status</div>
+                        <div class="col-xs-9">
+                            <span t-if="doc.complete == True">Complete</span>
+                            <span t-if="doc.complete == False">Incomplete</span>
+                        </div>
+
+                        <div class="col-xs-3">By</div>
+                        <div class="col-xs-9"><span t-field="doc.create_uid.display_name"/></div>
                     </div>
                 </t>
             </t>
